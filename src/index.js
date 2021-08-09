@@ -4,9 +4,10 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-const element = <h1> Hello From Bridgelabz</h1> 
 ReactDOM.render(
-element,
+<React.StrictMode>
+  <App />
+</React.StrictMode>,
   document.getElementById('root')
 );
 
