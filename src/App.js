@@ -1,6 +1,7 @@
-import logo from './logo.svg';
+
 import './App.css';
 import React from 'react';
+import logo from 'C:/Users/harshit.jadon.MD-CJDKE06555KH/Desktop/ReactJs/helloworld/src/assests/Neeraj-Chopra.jpg';
 
 class App extends React.Component{
  constructor(){
@@ -16,6 +17,7 @@ class App extends React.Component{
   return(
     <div>
        <h1>{this.state.title}</h1>
+       <img src={logo} alt='neerajchopra'/>
     </div>
    
   );
