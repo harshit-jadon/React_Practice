@@ -9,23 +9,29 @@ url = "https://en.wikipedia.org/wiki/Neeraj_Chopra"
  constructor(){
    super()
    this.state = {
-     title: <div>
-            <h2>"Hello I am Practising React Component"</h2>
-            "Hello Neeraj Chopra"
-     </div>
+     userName:''
+     
     }
  }
 
  shoWebsite =() =>{
    window.open(this.url,"_blank");
  }
+ onNameChange =(event) =>{
+   this.setState({username:event.target.value})
+ }
 
   render(){
     return(
+      <>
       <div>
-        <h1>{this.state.title}</h1>
+      <h1>{this.state.username}</h1>
         <img src={image} alt='neerajchopra' onClick={this.shoWebsite}/>
       </div>
+      <div class="input">
+        <input onChange={this.onNameChange}/>
+      </div>
+      </>
     );
   }
 }

@@ -15,3 +15,8 @@ img{
   margin:auto;
   cursor: pointer;
 }
+.input{
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+}
