@@ -9,8 +9,9 @@ url = "https://en.wikipedia.org/wiki/Neeraj_Chopra"
  constructor(){
    super()
    this.state = {
-     userName:''
-     
+     title:'Welcome to React JS',
+     userName:'',
+     nameError: ''
     }
  }
 
@@ -18,18 +19,27 @@ url = "https://en.wikipedia.org/wiki/Neeraj_Chopra"
    window.open(this.url,"_blank");
  }
  onNameChange =(event) =>{
+   const nameRegex= RegExp('^[A-Z]{1}[a-zA-Z]{2,}$');
    this.setState({username:event.target.value})
+   if(nameRegex.test(event.target.value)){
+     this.setState({nameError:''});
+   }else{
+     this.setState({nameError:'Name is Incorrect: '})
+   }
+
  }
 
   render(){
     return(
       <>
       <div>
-      <h1>{this.state.username}</h1>
+        <h1>{this.state.title}</h1>
+        <h2>HELLO {this.state.username}</h2>
         <img src={image} alt='neerajchopra' onClick={this.shoWebsite}/>
       </div>
       <div class="input">
         <input onChange={this.onNameChange}/>
+        <span className="error-output">{this.state.nameError}</span>
       </div>
       </>
     );
