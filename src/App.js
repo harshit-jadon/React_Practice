@@ -3,15 +3,23 @@ import './App.css';
 import React from 'react';
 
 class App extends React.Component{
-  render(){
-    return(
-      <div>
-         <h1>Hey, Harshit</h1>
-         <h2>You are Practicing React App</h2>
-      </div>
-     
-    );
-  }
+ constructor(){
+   super()
+   this.state = {
+     title: <div>
+            <h2>"Hello I am Practising React Component"</h2>
+            "Hello Harshit"
+     </div>
+   }
+ }
+ render(){
+  return(
+    <div>
+       <h1>{this.state.title}</h1>
+    </div>
+   
+  );
+}
 }
 
 export default App;
